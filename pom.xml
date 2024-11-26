@@ -97,7 +97,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.cat201librarysystem/com.example.cat201librarysystem.HelloApplication
+                                com.example.cat201librarysystem/com.example.cat201librarysystem.LibrarySystem
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
