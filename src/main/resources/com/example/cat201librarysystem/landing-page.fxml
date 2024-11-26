@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.LandingController">
    <children>
       <SplitPane dividerPositions="0.65" prefHeight="373.0" prefWidth="566.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -30,18 +30,18 @@
                      </font>
                   </Label>
                   <Label layoutX="35.0" layoutY="175.0" text="ID" />
-                  <TextField layoutX="35.0" layoutY="200.0" prefHeight="26.0" prefWidth="158.0" promptText="(e.g: Matrics No 22303677)">
+                  <TextField fx:id="idField" layoutX="35.0" layoutY="200.0" prefHeight="26.0" prefWidth="158.0" promptText="(e.g: Matrics No 22303677)">
                      <font>
                         <Font name="System Italic" size="12.0" />
                      </font>
                   </TextField>
                   <Label layoutX="35.0" layoutY="243.0" text="Password" />
-                  <PasswordField layoutX="35.0" layoutY="268.0" prefHeight="26.0" prefWidth="158.0" promptText="(e.g: IC No 040502100789)">
+                  <PasswordField fx:id="passwordField" layoutX="35.0" layoutY="268.0" prefHeight="26.0" prefWidth="158.0" promptText="(e.g: IC No 040502100789)">
                      <font>
                         <Font name="System Italic" size="12.0" />
                      </font>
                   </PasswordField>
-                  <Button layoutX="147.0" layoutY="315.0" mnemonicParsing="false" text="Login" />
+                  <Button fx:id="loginButton" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" text="Login" />
                </children></AnchorPane>
         </items>
       </SplitPane>
