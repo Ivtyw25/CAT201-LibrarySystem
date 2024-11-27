@@ -41,7 +41,7 @@
                         <Font name="System Italic" size="12.0" />
                      </font>
                   </PasswordField>
-                  <Button fx:id="loginButton" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" text="Login" />
+                  <Button fx:id="loginButton" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
                </children></AnchorPane>
         </items>
       </SplitPane>
