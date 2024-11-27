@@ -13,8 +13,8 @@ public class LibrarySystem extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(LibrarySystem.class.getResource("landing-page.fxml"));
         Library library = Library.getInstance();
         fxmlLoader.setControllerFactory(c -> {
-            if (c == LandingController.class) {
-                return new LandingController(library); // Pass the library to the controller
+            if (c == LandingPageController.class) {
+                return new LandingPageController(library); // Pass the library to the controller
             }
             try {
                 return c.getDeclaredConstructor().newInstance();

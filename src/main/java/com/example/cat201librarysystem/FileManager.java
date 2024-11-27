@@ -23,4 +23,22 @@ public class FileManager {
         }
         return library;
     }
+
+    public static boolean checkCredentials(String username, String password, String csvFilePath) {
+        String line;
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+            while ((line = br.readLine()) != null) {
+                String[] credentials = line.split(",");
+
+                // Check if the credentials match
+                if (credentials.length == 2 && credentials[0].equals(username) && credentials[1].equals(password)) {
+                    return true;  // Credentials are correct
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;  // Credentials not found
+    }
+
 }
