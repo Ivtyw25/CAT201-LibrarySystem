@@ -14,9 +14,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="717.0" style="-fx-background-color: radial-gradient(focus-angle 0deg, focus-distance 10%, center 50% 50%, radius 50%, #ee302a,),;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.AddBookPageController">
    <children>
-      <ImageView fitHeight="475.0" fitWidth="930.0" layoutX="-93.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="475.0" fitWidth="875.0" layoutX="-93.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Downloads/7b1d0948-4c1c-4dfd-bcb2-5e5f661f2182.jpg" />
+            <Image url="@img/background.jpg" />
          </image>
          <effect>
             <Bloom threshold="0.42" />
