@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 public class HomePageController implements Initializable {
     private Library library;
     @FXML
-    private Button testButton;
+    private Button toAddBookPageButton;
     public HomePageController(Library library) {
         this.library = library;
     }
@@ -26,3 +26,4 @@ public class HomePageController implements Initializable {
     }
 
 }
+
