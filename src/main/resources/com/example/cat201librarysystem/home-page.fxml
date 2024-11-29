@@ -20,7 +20,7 @@
       </AnchorPane>
       <AnchorPane layoutY="94.0" prefHeight="376.0" prefWidth="239.0">
          <children>
-            <Button fx:id="toAddBookPageButton" layoutX="94.0" layoutY="275.0" mnemonicParsing="false" text="Add Book" />
+            <Button fx:id="toAddBookPageButton" layoutX="94.0" layoutY="275.0" mnemonicParsing="false" onAction="#onClickAddBook" text="Add Book" />
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/add book.jpg" />
@@ -30,7 +30,7 @@
       </AnchorPane>
       <AnchorPane layoutX="239.0" layoutY="94.0" prefHeight="376.0" prefWidth="239.0">
          <children>
-            <Button layoutX="83.0" layoutY="290.0" mnemonicParsing="false" text="Button" />
+            <Button fx:id="toBorrowBookPageButton" layoutX="83.0" layoutY="290.0" mnemonicParsing="false" onAction="#onClickBorrowBook" text="Borrow Book" />
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/return book.jpg" />
