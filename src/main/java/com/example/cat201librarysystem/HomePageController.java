@@ -18,6 +18,9 @@ public class HomePageController implements Initializable {
     private Button toAddBookPageButton;
     @FXML
     private Button toBorrowBookPageButton;
+    @FXML
+    private Button toReturnBookPageButton;
+
     public HomePageController(Library library) {
         this.library = library;
     }
@@ -67,6 +70,24 @@ public class HomePageController implements Initializable {
             }
         });
         Stage stage = (Stage) toBorrowBookPageButton.getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load(), 717, 469));
+        stage.show();
+    }
+
+    public void changeToReturnBookPage () throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("returnbook-page.fxml"));
+        fxmlLoader.setControllerFactory(c -> {
+            if (c == ReturnBookPageController.class) {
+                return new ReturnBookPageController(library);
+            }
+            try {
+                return c.getDeclaredConstructor().newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        });
+        Stage stage = (Stage) toReturnBookPageButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 717, 469));
         stage.show();
     }

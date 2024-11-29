@@ -40,7 +40,7 @@
       </AnchorPane>
       <AnchorPane layoutX="478.0" layoutY="94.0" prefHeight="376.0" prefWidth="239.0">
          <children>
-            <Button layoutX="94.0" layoutY="286.0" mnemonicParsing="false" text="Button" />
+            <Button fx:id="toReturnBookPageButton" layoutX="94.0" layoutY="286.0" mnemonicParsing="false" onAction="#changeToReturnBookPage" text="Return Book" />
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/borrow book.jpg" />
