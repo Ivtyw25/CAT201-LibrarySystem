@@ -8,34 +8,58 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.LandingPageController">
    <children>
-      <SplitPane dividerPositions="0.65" prefHeight="373.0" prefWidth="566.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.648867766284596" prefHeight="373.0" prefWidth="566.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="469.0" fitWidth="491.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-29.0" AnchorPane.topAnchor="0.0">
+                  <ImageView fitHeight="624.0" fitWidth="486.0" layoutY="-90.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-24.0" AnchorPane.topAnchor="-90.0">
                      <image>
-                        <Image url="@img/output.jpg" />
+                        <Image url="@../../../../../../../Downloads/2f71125b-bda7-4c41-a93e-ebc0aa8d8965.jpg" />
                      </image>
                   </ImageView>
                </children></AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="254.0" style="-fx-background-color: #FDE6BB;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="236.0" style="-fx-background-color: linear-gradient(to bottom,#d50000,#000a95);">
                <children>
-                  <Label layoutX="16.0" layoutY="47.0" prefHeight="128.0" prefWidth="216.0" text="Welcome To Library Management System" textAlignment="CENTER" wrapText="true">
+                  <Label layoutX="2.0" layoutY="31.0" prefHeight="143.0" prefWidth="241.0" text="Welcome To Library Management System" textAlignment="CENTER" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="17.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.2518518567085266" green="0.9501234292984009" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="0.2518518567085266" green="0.9501234292984009" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9157894849777222" green="0.4841247498989105" blue="0.3527485430240631" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
                   </Label>
-                  <Label layoutX="35.0" layoutY="175.0" text="Username" />
+                  <Label layoutX="35.0" layoutY="175.0" text="Username" textFill="#f7f7f7" />
                   <TextField fx:id="usernameField" layoutX="35.0" layoutY="200.0" prefHeight="26.0" prefWidth="158.0" promptText="(e.g: ivtyw)">
                      <font>
                         <Font name="System Italic" size="12.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="35.0" layoutY="243.0" text="Password" />
+                  <Label layoutX="35.0" layoutY="243.0" text="Password" textFill="WHITE" />
                   <PasswordField fx:id="passwordField" layoutX="36.0" layoutY="268.0" prefHeight="26.0" prefWidth="158.0" promptText="(e.g: admin123)">
                      <font>
                         <Font name="System Italic" size="12.0" />
@@ -47,7 +71,7 @@
                         <Font name="Arial Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="emptyErrorMessage" layoutX="16.0" layoutY="370.0" text="username or password cannot be empty" textFill="RED">
+                  <Label fx:id="emptyErrorMessage" layoutX="9.0" layoutY="370.0" text="username or password cannot be empty" textFill="RED">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
                      </font>

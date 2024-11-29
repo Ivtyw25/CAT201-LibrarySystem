@@ -5,45 +5,80 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.HomePageController">
    <children>
-      <AnchorPane prefHeight="94.0" prefWidth="717.0" style="-fx-background-color: orange;">
+      <AnchorPane prefHeight="94.0" prefWidth="717.0" style="-fx-background-color: linear-gradient(to left,#3f5efb, #6a0f7d);">
          <children>
-            <Label layoutX="28.0" layoutY="19.0" text="Librarian">
+            <Label layoutX="83.0" layoutY="23.0" text="Librarian">
                <font>
-                  <Font size="46.0" />
+                  <Font name="Arial Black" size="32.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.5997461676597595" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Label>
+            <Button layoutX="603.0" layoutY="33.0" mnemonicParsing="false" style="-fx-background-color: BLACK;" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="94.0" prefHeight="376.0" prefWidth="239.0">
+      <AnchorPane layoutY="94.0" prefHeight="376.0" prefWidth="239.0" style="-fx-background-color: linear-gradient( to bottom,black,black,black,black,blue);">
          <children>
-            <Button fx:id="toAddBookPageButton" layoutX="94.0" layoutY="275.0" mnemonicParsing="false" onAction="#onClickAddBook" text="Add Book" />
-            <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="toAddBookPageButton" layoutX="60.0" layoutY="282.0" mnemonicParsing="false" onAction="#onClickAddBook" prefHeight="47.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Add Book" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="277.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/add book.jpg" />
+                  <Image url="@../../../../../../../Downloads/home%20img%201.jpg" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="239.0" layoutY="94.0" prefHeight="376.0" prefWidth="239.0">
+      <AnchorPane layoutX="239.0" layoutY="94.0" prefHeight="376.0" prefWidth="239.0" style="-fx-background-color: linear-gradient( to bottom,black,black,black,black,blue);">
          <children>
-            <Button fx:id="toBorrowBookPageButton" layoutX="83.0" layoutY="290.0" mnemonicParsing="false" onAction="#onClickBorrowBook" text="Borrow Book" />
+            <Button fx:id="toBorrowBookPageButton" layoutX="45.0" layoutY="280.0" mnemonicParsing="false" onAction="#onClickBorrowBook" prefHeight="47.0" prefWidth="149.0" style="-fx-background-color: transparent;" text="Borrow Book" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="19.0" />
+               </font>
+            </Button>
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/return book.jpg" />
+                  <Image url="@../../../../../../../Downloads/home%20img%202.jpg" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="478.0" layoutY="94.0" prefHeight="376.0" prefWidth="239.0">
+      <AnchorPane layoutX="478.0" layoutY="94.0" prefHeight="376.0" prefWidth="239.0" style="-fx-background-color: linear-gradient( to bottom,black,black,black,black,blue);">
          <children>
-            <Button layoutX="94.0" layoutY="286.0" mnemonicParsing="false" text="Button" />
+            <Button layoutX="50.0" layoutY="281.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Return Book" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="19.0" />
+               </font></Button>
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/borrow book.jpg" />
+                  <Image url="@../../../../../../../Downloads/home%20img%203.jpg" />
                </image>
             </ImageView>
          </children>
