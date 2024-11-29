@@ -23,7 +23,7 @@
             <Button fx:id="toAddBookPageButton" layoutX="94.0" layoutY="275.0" mnemonicParsing="false" text="Add Book" />
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/add%20book.jpg" />
+                  <Image url="@img/add book.jpg" />
                </image>
             </ImageView>
          </children>
@@ -33,7 +33,7 @@
             <Button layoutX="83.0" layoutY="290.0" mnemonicParsing="false" text="Button" />
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/return%20book.jpg" />
+                  <Image url="@img/return book.jpg" />
                </image>
             </ImageView>
          </children>
@@ -43,7 +43,7 @@
             <Button layoutX="94.0" layoutY="286.0" mnemonicParsing="false" text="Button" />
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/borrow%20book.jpg" />
+                  <Image url="@img/borrow book.jpg" />
                </image>
             </ImageView>
          </children>
