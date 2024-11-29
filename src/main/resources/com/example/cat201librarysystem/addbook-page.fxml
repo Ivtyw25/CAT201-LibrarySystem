@@ -25,10 +25,10 @@
       <TextField fx:id="addBookTitle" layoutX="147.0" layoutY="125.0" prefHeight="26.0" prefWidth="422.0" promptText="Title " />
       <TextField fx:id="addBookISBN" layoutX="148.0" layoutY="180.0" prefHeight="26.0" prefWidth="422.0" promptText="ISBN" />
       <TextField fx:id="addBookAuthor" alignment="TOP_LEFT" layoutX="146.0" layoutY="235.0" prefHeight="26.0" prefWidth="422.0" promptText="Author" />
-      <Button fx:id="submitAddBook" layoutX="314.0" layoutY="279.0" mnemonicParsing="false" text="Add Book" />
+      <Button fx:id="submitAddBook" layoutX="314.0" layoutY="279.0" mnemonicParsing="false" onAction="#onSubmitAddBook" text="Add Book" />
       <Label layoutX="200.0" layoutY="30.0" prefHeight="74.0" prefWidth="317.0" text="ADD BOOK" wrapText="true">
          <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
+            <LinearGradient>
                <stops>
                   <Stop>
                      <color>

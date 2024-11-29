@@ -15,14 +15,14 @@
    <children>
       <ImageView fitHeight="479.0" fitWidth="879.0" layoutX="-88.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Downloads/7b1d0948-4c1c-4dfd-bcb2-5e5f661f2182.jpg" />
+            <Image url="@img/background.jpg" />
          </image>
       </ImageView>
       <AnchorPane layoutX="14.0" prefHeight="469.0" prefWidth="705.0">
          <children>
             <TextField fx:id="borrowBookISBN" layoutX="142.0" layoutY="148.0" prefHeight="26.0" prefWidth="422.0" promptText="ISBN" />
             <TextField fx:id="borrowBookBorrowerName" layoutX="142.0" layoutY="208.0" prefHeight="26.0" prefWidth="422.0" promptText="Borrower Name" />
-            <Button fx:id="submitBorrowBook" layoutX="312.0" layoutY="283.0" mnemonicParsing="false" text="Button" />
+            <Button fx:id="submitBorrowBook" layoutX="312.0" layoutY="283.0" mnemonicParsing="false" onAction="#onSubmitBorrowBook" text="Button" />
             <Label layoutX="133.0" layoutY="45.0" prefHeight="74.0" prefWidth="474.0" text="BORROW BOOK" wrapText="true">
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
