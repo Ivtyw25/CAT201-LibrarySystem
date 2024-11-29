@@ -21,7 +21,7 @@
                <children>
                   <ImageView fitHeight="624.0" fitWidth="486.0" layoutY="-90.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-24.0" AnchorPane.topAnchor="-90.0">
                      <image>
-                        <Image url="@../../../../../../../Downloads/2f71125b-bda7-4c41-a93e-ebc0aa8d8965.jpg" />
+                        <Image url="@img/landing%20page%201.jpg" />
                      </image>
                   </ImageView>
                </children></AnchorPane>
