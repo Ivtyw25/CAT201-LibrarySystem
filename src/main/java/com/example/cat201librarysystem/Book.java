@@ -12,7 +12,7 @@ public class Book {
         this.author = a;
         this.isbn = isbn;
         this.borrowerName = b;
-        if (borrowerName != null) {
+        if (borrowerName == null) {
             isAvailable = true;
         }
     }
@@ -60,7 +60,6 @@ public class Book {
         return false;
     }
 
-    // Method to return a book
     public void returnBook() {
         this.isAvailable = true;
         this.borrowerName = null;

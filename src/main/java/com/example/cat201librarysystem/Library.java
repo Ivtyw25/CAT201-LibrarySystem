@@ -22,13 +22,17 @@ public class Library {
         return instance;
     }
 
-    public void addBook(String title, String author, String isbn) {
+    public HashMap<String, Book> getLibrary() { return library; }
+
+    public boolean addBook(String title, String author, String isbn) {
         if (library.containsKey(isbn)) {
             System.out.println("Book already exists");
+            return true;
         } else {
             Book book = new Book(title, author, isbn, "" );
             library.put(isbn, book);
             System.out.println("Book added");
+            return false;
         }
     }
 
@@ -70,4 +74,7 @@ public class Library {
             book.displayDetails();
         }
     }
+
+
+
 }

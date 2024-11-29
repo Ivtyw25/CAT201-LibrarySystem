@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="469.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.ReturnBookPageController">
    <children>
       <!-- Title Label -->
-      <Label layoutX="220.0" layoutY="50.0" text="Return Book" style="-fx-font-size: 24;" />
+      <Label layoutX="220.0" layoutY="50.0" style="-fx-font-size: 24;" text="Return Book" />
 
       <!-- ISBN Label -->
       <Label layoutX="136.0" layoutY="130.0" text="Enter ISBN:" />
@@ -17,6 +17,6 @@
       <TextField fx:id="returnBookISBNField" layoutX="136.0" layoutY="160.0" prefHeight="26.0" prefWidth="312.0" promptText="ISBN" />
 
       <!-- Submit Button -->
-      <Button fx:id="submitReturnBook" layoutX="258.0" layoutY="220.0" mnemonicParsing="false" text="Return Book" />
+      <Button fx:id="submitReturnBook" layoutX="258.0" layoutY="220.0" mnemonicParsing="false" onAction="#onSubmitReturnBook" text="Return Book" />
    </children>
 </AnchorPane>
