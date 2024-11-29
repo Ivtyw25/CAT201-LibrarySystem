@@ -51,7 +51,7 @@
             </Button>
             <ImageView fitHeight="277.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/home%20img%201.jpg" />
+                  <Image url="@img/home%20img%201.jpg" />
                </image>
             </ImageView>
          </children>
@@ -65,7 +65,7 @@
             </Button>
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/home%20img%202.jpg" />
+                  <Image url="@img/home%20img%202.jpg" />
                </image>
             </ImageView>
          </children>
@@ -78,7 +78,7 @@
                </font></Button>
             <ImageView fitHeight="376.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/home%20img%203.jpg" />
+                  <Image url="@img/home%20img%203.jpg" />
                </image>
             </ImageView>
          </children>
