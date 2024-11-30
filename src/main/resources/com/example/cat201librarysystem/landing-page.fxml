@@ -22,7 +22,7 @@
                      </image>
                   </ImageView>
                </children></AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="236.0" style="-fx-background-color: #F3DCBA;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="236.0" style="-fx-background-color: #B1D0E0;">
                <children>
                   <Label layoutX="2.0" layoutY="31.0" prefHeight="143.0" prefWidth="241.0" text="Welcome To Library Management System" textAlignment="CENTER" wrapText="true">
                      <font>

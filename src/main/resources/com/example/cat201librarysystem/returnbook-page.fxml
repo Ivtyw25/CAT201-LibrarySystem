@@ -6,12 +6,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="469.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.ReturnBookPageController">
+<AnchorPane prefHeight="470.0" prefWidth="665.0" stylesheets="@returnbook-page.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.ReturnBookPageController">
    <children>
       <ImageView fitHeight="479.0" fitWidth="879.0" layoutX="-33.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,33 +16,14 @@
          </image>
       </ImageView>
 
-      <!-- ISBN Label -->
-      <Label layoutX="136.0" layoutY="130.0" text="Enter ISBN:" />
-
       <!-- ISBN Input Field -->
       <TextField fx:id="returnBookISBNField" layoutX="142.0" layoutY="156.0" prefHeight="26.0" prefWidth="412.0" promptText="ISBN" />
 
       <!-- Submit Button -->
       <Button fx:id="submitReturnBook" layoutX="307.0" layoutY="220.0" mnemonicParsing="false" onAction="#onSubmitReturnBook" text="Return Book" />
-      <Label layoutX="142.0" layoutY="45.0" prefHeight="74.0" prefWidth="474.0" text="RETURN BOOK" wrapText="true">
-         <textFill>
-            <LinearGradient>
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" green="0.6000000238418579" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
+      <Label fx:id="returnBookPageTitle" layoutX="216.0" layoutY="74.0" prefHeight="74.0" prefWidth="295.0" text="RETURN BOOK" wrapText="true">
          <font>
-            <Font name="Arial Black" size="50.0" />
+            <Font size="50.0" />
          </font>
       </Label>
       <Button fx:id="backButton" layoutX="34.0" layoutY="34.0" mnemonicParsing="false" onAction="#onClickBack" opacity="0.8" text="BACK">

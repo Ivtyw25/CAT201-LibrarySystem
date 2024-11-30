@@ -1,30 +1,41 @@
-/* Base Button Styling */
+@font-face {
+    font-family: "Parkinsans-Bold";
+    src: url(fonts/Parkinsans-Bold.ttf);
+}
+
 .button {
-    -fx-background-color: #FFB6A0;
-    -fx-padding: 12 24 12 24;   /* Adjust padding for a more substantial look */
-    -fx-background-radius: 8px;  /* Slightly rounded corners */
-    -fx-border-radius: 8px;      /* Matching border radius */
-    -fx-border-color: #FF9E80;   /* Darker border color */
-    -fx-border-width: 3px;       /* Thicker border for a more 3D appearance */
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 8, 0, 3, 3); /* Default subtle shadow */
-    -fx-translate-x: 0;
-    -fx-translate-y: 0;
-    -fx-transition: all 0.3s ease; /* Smooth transition for transformations */
+    -fx-background-color: #1A374D; /* Dark blue background */
+    -fx-padding: 12 24 12 24;      /* Padding for a more substantial look */
+    -fx-background-radius: 8px;    /* Rounded corners */
+    -fx-border-radius: 8px;        /* Matching border radius */
+    -fx-border-color: #6998AB;     /* Light blue border */
+    -fx-border-width: 3px;         /* Thicker border */
+    -fx-text-fill: #B1D0E0;
+    -fx-cursor: hand;              /* Hand cursor on hover */
+    -fx-font-weight: 700;           /* Bold text */
+    -fx-font-family: Parkinsans-Bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 8, 0, 3, 3); /* Subtle shadow */
+    -fx-transition: all 0.3s ease; /* Smooth transition for hover and press effects */
 }
 
-/* Hover Effect: Enhanced 3D look with translation and stronger shadow */
 .button:hover {
-    -fx-background-color: #FF9E80;  /* Darker background on hover */
-    -fx-border-color: #FF7A58;      /* Darker border on hover */
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 12, 0, 6, 6); /* Stronger shadow on hover */
+    -fx-background-color: #406882; /* Lighter blue on hover */
+    -fx-border-color: #B1D0E0;     /* Lighter blue border on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 12, 0, 6, 6); /* Slightly stronger shadow */
 }
 
-/* Pressed State: Button goes deeper into the background with a more pronounced shadow */
 .button:pressed {
-    -fx-background-color: #FF8C66;  /* Darker background when pressed */
-    -fx-border-color: #FF5F3A;      /* Even darker border when pressed */
-    -fx-translate-x: 0;             /* No translation when pressed */
-    -fx-translate-y: 4px;           /* Button slightly pressed down */
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 16, 0, 8, 8); /* Strong drop shadow for depth */
+    -fx-background-color: #6998AB; /* Light blue when pressed */
+    -fx-border-color: #B1D0E0;     /* Light blue border when pressed */
+    -fx-translate-y: 4px;           /* Button slightly moves down when pressed */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 16, 0, 8, 8); /* Stronger shadow when pressed */
+}
+
+
+.label {
+    -fx-font-size: 36px;
+    -fx-font-weight: 700;
+    -fx-font-family: Parkinsans-Bold;
+    -fx-alignment: center;
+    -fx-text-fill: #1A374D;
 }

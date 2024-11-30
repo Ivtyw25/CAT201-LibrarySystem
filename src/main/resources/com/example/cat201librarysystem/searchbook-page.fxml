@@ -6,64 +6,55 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="469.0" prefWidth="717.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.SearchBookPageController">
+<AnchorPane prefHeight="469.0" prefWidth="717.0" style="-fx-background-color: B1D0E0;" stylesheets="@searchbook-page.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.SearchBookPageController">
     <children>
+      <ImageView fitHeight="469.0" fitWidth="727.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@img/background.jpg" />
+         </image>
+      </ImageView>
       <AnchorPane layoutX="9.0" layoutY="3.0" prefHeight="462.0" prefWidth="717.0">
          <children>
-              <TextField fx:id="searchField" layoutX="141.0" layoutY="128.0" prefHeight="36.0" prefWidth="426.0" promptText="Enter title, author or ISBN" />
+              <TextField fx:id="searchField" layoutX="149.0" layoutY="129.0" prefHeight="44.0" prefWidth="411.0" promptText="Enter title, author or ISBN">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></TextField>
               <!-- TableView for Books -->
               <TableView fx:id="bookTableView" layoutX="-9.0" layoutY="187.0" prefHeight="275.0" prefWidth="727.0">
                   <!-- Column for Title -->
                   <columns>
-                      <TableColumn fx:id="titleColumn" prefWidth="154.39996337890625" text="Title">
+                      <TableColumn fx:id="titleColumn" prefWidth="244.79995441436768" text="Title">
                           <cellValueFactory>
                               <PropertyValueFactory property="title" />
                           </cellValueFactory>
                       </TableColumn>
       
                                   <!-- Column for Author -->
-                      <TableColumn fx:id="authorColumn" prefWidth="132.0" text="Author">
+                      <TableColumn fx:id="authorColumn" minWidth="0.0" prefWidth="218.40003967285156" text="Author">
                           <cellValueFactory>
                               <PropertyValueFactory property="author" />
                           </cellValueFactory>
                       </TableColumn>
       
                                   <!-- Column for ISBN -->
-                      <TableColumn fx:id="ISBNColumn" prefWidth="160.7999267578125" text="ISBN">
+                      <TableColumn fx:id="ISBNColumn" prefWidth="260.00006103515625" text="ISBN">
                           <cellValueFactory>
                               <PropertyValueFactory property="isbn" />
                           </cellValueFactory>
                       </TableColumn>
                   </columns>
               </TableView>
-            <Label layoutX="148.0" layoutY="35.0" prefHeight="74.0" prefWidth="474.0" text="SEARCH BOOK" wrapText="true">
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="1.0" green="0.6000000238418579" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
+            <Label fx:id="searchBookTitle" layoutX="205.0" layoutY="55.0" prefHeight="74.0" prefWidth="300.0" text="SEARCH BOOK" wrapText="true">
                <font>
-                  <Font name="Arial Black" size="50.0" />
+                  <Font size="50.0" />
                </font>
             </Label>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickBack" opacity="0.8" text="BACK">
+            <Button fx:id="backButton" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#onClickBack" opacity="0.8" prefHeight="40.0" prefWidth="74.0" text="BACK">
                <font>
                   <Font name="Algerian" size="12.0" />
                </font>
