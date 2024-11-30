@@ -1,0 +1,18 @@
+Index: src/main/java/com/example/cat201librarysystem/Library.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cat201librarysystem;\r\n\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\n\r\nimport java.io.*;\r\nimport java.util.HashMap;\r\nimport java.util.Locale;\r\n\r\nimport static com.example.cat201librarysystem.FileManager.loadFromCSV;\r\n\r\npublic class Library {\r\n\r\n    private static Library instance;\r\n    private HashMap<String, Book> library;\r\n    private static final String path = \"src/main/resources/com/example/cat201librarysystem/CSV_file/books.csv\";\r\n    private Library() {\r\n        library = new HashMap<>();\r\n    }\r\n\r\n    public static Library getInstance() throws IOException {\r\n        if (instance == null) {\r\n            instance = new Library();\r\n            instance.library = loadFromCSV(path);\r\n        }\r\n        return instance;\r\n    }\r\n\r\n    public HashMap<String, Book> getLibrary() { return library; }\r\n\r\n    public boolean addBook(String title, String author, String isbn) {\r\n        if (library.containsKey(isbn)) {\r\n            System.out.println(\"Book already exists\");\r\n            return true;\r\n        } else {\r\n            Book book = new Book(title, author, isbn, null );\r\n            library.put(isbn, book);\r\n            System.out.println(\"Book added\");\r\n            return false;\r\n        }\r\n    }\r\n\r\n    public ObservableList<Book> searchBooks(String searchTerm) {\r\n        ObservableList<Book> results = FXCollections.observableArrayList();\r\n\r\n        // Make the search term case-insensitive\r\n        String lowerCaseSearchTerm = searchTerm.toLowerCase();\r\n\r\n        // Iterate over all books in the library\r\n        for (Book book : library.values()) {\r\n            // Search by title, author, or ISBN (case insensitive)\r\n            if (book.getTitle().toLowerCase().contains(lowerCaseSearchTerm) ||\r\n                    book.getAuthor().toLowerCase().contains(lowerCaseSearchTerm) ||\r\n                    book.getIsbn().toLowerCase().contains(lowerCaseSearchTerm)) {\r\n                results.add(book);\r\n            }\r\n        }\r\n\r\n        return results;\r\n    }\r\n    public ObservableList<Book> getAllBooks() {\r\n        return FXCollections.observableArrayList(library.values());\r\n    }\r\n\r\n    public void displayBooks (){\r\n        if (library.isEmpty()){\r\n            System.out.println(\"No books in library\");\r\n            return;\r\n        }\r\n        System.out.println(\"Books in library:\");\r\n        for (Book book : library.values()){\r\n            book.displayDetails();\r\n        }\r\n    }\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/cat201librarysystem/Library.java b/src/main/java/com/example/cat201librarysystem/Library.java
+--- a/src/main/java/com/example/cat201librarysystem/Library.java	(revision 78df175096b2d71950023a4eb63dcec22c46267f)
++++ b/src/main/java/com/example/cat201librarysystem/Library.java	(date 1732982754472)
+@@ -48,7 +48,6 @@
+ 
+         // Iterate over all books in the library
+         for (Book book : library.values()) {
+-            // Search by title, author, or ISBN (case insensitive)
+             if (book.getTitle().toLowerCase().contains(lowerCaseSearchTerm) ||
+                     book.getAuthor().toLowerCase().contains(lowerCaseSearchTerm) ||
+                     book.getIsbn().toLowerCase().contains(lowerCaseSearchTerm)) {

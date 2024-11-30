@@ -1,0 +1,95 @@
+Index: src/main/java/com/example/cat201librarysystem/Library.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cat201librarysystem;\r\n\r\nimport java.io.*;\r\nimport java.util.HashMap;\r\n\r\nimport static com.example.cat201librarysystem.FileManager.loadFromCSV;\r\n\r\npublic class Library {\r\n\r\n    private static Library instance;\r\n    private HashMap<String, Book> library;\r\n    private static final String path = \"src/main/resources/com/example/cat201librarysystem/CSV_file/books.csv\";\r\n    private Library() {\r\n        library = new HashMap<>();\r\n    }\r\n\r\n    public static Library getInstance() throws IOException {\r\n        if (instance == null) {\r\n            instance = new Library();\r\n            instance.library = loadFromCSV(path);\r\n        }\r\n        return instance;\r\n    }\r\n\r\n    public void addBook(String title, String author, String isbn) {\r\n        if (library.containsKey(isbn)) {\r\n            System.out.println(\"Book already exists\");\r\n        } else {\r\n            Book book = new Book(title, author, isbn, \"\" );\r\n            library.put(isbn, book);\r\n            System.out.println(\"Book added\");\r\n        }\r\n    }\r\n\r\n    public HashMap<String, Book> searchByTitle(String title) {\r\n        HashMap<String, Book> results = new HashMap<>();\r\n        for (String isbn : library.keySet()) {\r\n            Book book = library.get(isbn);\r\n            if (book.getTitle().equalsIgnoreCase(title)) {\r\n                results.put(isbn, book);\r\n            }\r\n        }\r\n        return results;\r\n    }\r\n\r\n    // Method to search for books by author (results in a HashMap)\r\n    public HashMap<String, Book> searchByAuthor(String author) {\r\n        HashMap<String, Book> results = new HashMap<>();\r\n        for (String isbn : library.keySet()) {\r\n            Book book = library.get(isbn);\r\n            if (book.getAuthor().equalsIgnoreCase(author)) {\r\n                results.put(isbn, book);\r\n            }\r\n        }\r\n        return results;\r\n    }\r\n\r\n    // Method to search for a book by ISBN (HashMap allows direct access by key)\r\n    public Book searchByIsbn(String isbn) {\r\n        return library.get(isbn); // No change needed, already optimized for HashMap\r\n    }\r\n\r\n    public void displayBooks (){\r\n        if (library.isEmpty()){\r\n            System.out.println(\"No books in library\");\r\n            return;\r\n        }\r\n        System.out.println(\"Books in library:\");\r\n        for (Book book : library.values()){\r\n            book.displayDetails();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/cat201librarysystem/Library.java b/src/main/java/com/example/cat201librarysystem/Library.java
+--- a/src/main/java/com/example/cat201librarysystem/Library.java	(revision 2f7f34f0cff35cfe68ef28c58560e01e1aeee0ff)
++++ b/src/main/java/com/example/cat201librarysystem/Library.java	(date 1732983894760)
+@@ -1,7 +1,11 @@
+ package com.example.cat201librarysystem;
+ 
++import javafx.collections.FXCollections;
++import javafx.collections.ObservableList;
++
+ import java.io.*;
+ import java.util.HashMap;
++import java.util.Locale;
+ 
+ import static com.example.cat201librarysystem.FileManager.loadFromCSV;
+ 
+@@ -22,42 +26,39 @@
+         return instance;
+     }
+ 
+-    public void addBook(String title, String author, String isbn) {
++    public HashMap<String, Book> getLibrary() { return library; }
++
++    public boolean addBook(String title, String author, String isbn) {
+         if (library.containsKey(isbn)) {
+             System.out.println("Book already exists");
++            return true;
+         } else {
+-            Book book = new Book(title, author, isbn, "" );
++            Book book = new Book(title, author, isbn, null );
+             library.put(isbn, book);
+             System.out.println("Book added");
++            return false;
+         }
+     }
+ 
+-    public HashMap<String, Book> searchByTitle(String title) {
+-        HashMap<String, Book> results = new HashMap<>();
+-        for (String isbn : library.keySet()) {
+-            Book book = library.get(isbn);
+-            if (book.getTitle().equalsIgnoreCase(title)) {
+-                results.put(isbn, book);
++    public ObservableList<Book> searchBooks(String searchTerm) {
++        ObservableList<Book> results = FXCollections.observableArrayList();
++
++        // Make the search term case-insensitive
++        String lowerCaseSearchTerm = searchTerm.toLowerCase();
++
++        // Iterate over all books in the library
++        for (Book book : library.values()) {
++            if (book.getTitle().toLowerCase().contains(lowerCaseSearchTerm) ||
++                    book.getAuthor().toLowerCase().contains(lowerCaseSearchTerm) ||
++                    book.getIsbn().toLowerCase().contains(lowerCaseSearchTerm)) {
++                results.add(book);
+             }
+         }
++
+         return results;
+     }
+-
+-    // Method to search for books by author (results in a HashMap)
+-    public HashMap<String, Book> searchByAuthor(String author) {
+-        HashMap<String, Book> results = new HashMap<>();
+-        for (String isbn : library.keySet()) {
+-            Book book = library.get(isbn);
+-            if (book.getAuthor().equalsIgnoreCase(author)) {
+-                results.put(isbn, book);
+-            }
+-        }
+-        return results;
+-    }
+-
+-    // Method to search for a book by ISBN (HashMap allows direct access by key)
+-    public Book searchByIsbn(String isbn) {
+-        return library.get(isbn); // No change needed, already optimized for HashMap
++    public ObservableList<Book> getAllBooks() {
++        return FXCollections.observableArrayList(library.values());
+     }
+ 
+     public void displayBooks (){
+@@ -70,4 +71,8 @@
+             book.displayDetails();
+         }
+     }
++
++
++
++
+ }

@@ -1,0 +1,17 @@
+Index: src/main/java/com/example/cat201librarysystem/FileManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cat201librarysystem;\r\n\r\nimport java.io.*;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class FileManager {\r\n\r\n    private static final String FILE_NAME = \"books.csv\";\r\n\r\n    // Method to load books from CSV file\r\n    public static List<Book> loadBooks() {\r\n        List<Book> books = new ArrayList<>();\r\n        File file = new File(FILE_NAME);\r\n\r\n        if (!file.exists()) {\r\n            return books; // Return empty list if file doesn't exist\r\n        }\r\n\r\n        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {\r\n            String line;\r\n            while ((line = reader.readLine()) != null) {\r\n                books.add(Book.fromCsv(line));\r\n            }\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n        return books;\r\n    }\r\n\r\n    // Method to save books to CSV file\r\n    public static void saveBooks(List<Book> books) {\r\n        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {\r\n            for (Book book : books) {\r\n                writer.write(book.toCsv());\r\n                writer.newLine();\r\n            }\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    // Method to display all books\r\n    public static void displayBooks(List<Book> books) {\r\n        for (Book book : books) {\r\n            System.out.println(book);\r\n        }\r\n    }\r\n\r\n    // Method to add a new book\r\n    public static void addBook(List<Book> books, String title, String author, String isbn) {\r\n        books.add(new Book(title, author, isbn));\r\n        saveBooks(books); // Save the updated list to the file\r\n    }\r\n}\r\n\r\n
+===================================================================
+diff --git a/src/main/java/com/example/cat201librarysystem/FileManager.java b/src/main/java/com/example/cat201librarysystem/FileManager.java
+--- a/src/main/java/com/example/cat201librarysystem/FileManager.java	(revision 1f345c76189690e626448c811d91fbceda7096d0)
++++ b/src/main/java/com/example/cat201librarysystem/FileManager.java	(date 1732668681422)
+@@ -6,7 +6,7 @@
+ 
+ public class FileManager {
+ 
+-    private static final String FILE_NAME = "books.csv";
++    private static final String FILE_NAME = "src/main/resources/com/example/cat201librarysystem/CSV_file/book.csv";
+ 
+     // Method to load books from CSV file
+     public static List<Book> loadBooks() {

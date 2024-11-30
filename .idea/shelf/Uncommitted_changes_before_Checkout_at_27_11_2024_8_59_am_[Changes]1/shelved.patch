@@ -1,0 +1,33 @@
+Index: src/main/resources/com/example/cat201librarysystem/landing-page.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.SplitPane?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"469.0\" prefWidth=\"717.0\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.cat201librarysystem.LandingController\">\r\n   <children>\r\n      <SplitPane dividerPositions=\"0.65\" prefHeight=\"373.0\" prefWidth=\"566.0\" AnchorPane.bottomAnchor=\"0.0\" AnchorPane.leftAnchor=\"0.0\" AnchorPane.rightAnchor=\"0.0\" AnchorPane.topAnchor=\"0.0\">\r\n        <items>\r\n          <AnchorPane minHeight=\"0.0\" minWidth=\"0.0\" prefHeight=\"160.0\" prefWidth=\"100.0\">\r\n               <children>\r\n                  <ImageView fitHeight=\"469.0\" fitWidth=\"491.0\" pickOnBounds=\"true\" preserveRatio=\"true\" AnchorPane.bottomAnchor=\"-1.0\" AnchorPane.leftAnchor=\"0.0\" AnchorPane.rightAnchor=\"-29.0\" AnchorPane.topAnchor=\"0.0\">\r\n                     <image>\r\n                        <Image url=\"@img/output.jpg\" />\r\n                     </image>\r\n                  </ImageView>\r\n               </children></AnchorPane>\r\n          <AnchorPane minHeight=\"0.0\" minWidth=\"0.0\" prefHeight=\"468.0\" prefWidth=\"254.0\" style=\"-fx-background-color: #FDE6BB;\">\r\n               <children>\r\n                  <Label layoutX=\"16.0\" layoutY=\"47.0\" prefHeight=\"128.0\" prefWidth=\"216.0\" text=\"Welcome To Library Management System\" textAlignment=\"CENTER\" wrapText=\"true\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"17.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Label layoutX=\"35.0\" layoutY=\"175.0\" text=\"ID\" />\r\n                  <TextField fx:id=\"idField\" layoutX=\"35.0\" layoutY=\"200.0\" prefHeight=\"26.0\" prefWidth=\"158.0\" promptText=\"(e.g: Matrics No 22303677)\">\r\n                     <font>\r\n                        <Font name=\"System Italic\" size=\"12.0\" />\r\n                     </font>\r\n                  </TextField>\r\n                  <Label layoutX=\"35.0\" layoutY=\"243.0\" text=\"Password\" />\r\n                  <PasswordField fx:id=\"passwordField\" layoutX=\"35.0\" layoutY=\"268.0\" prefHeight=\"26.0\" prefWidth=\"158.0\" promptText=\"(e.g: IC No 040502100789)\">\r\n                     <font>\r\n                        <Font name=\"System Italic\" size=\"12.0\" />\r\n                     </font>\r\n                  </PasswordField>\r\n                  <Button fx:id=\"loginButton\" layoutX=\"147.0\" layoutY=\"315.0\" mnemonicParsing=\"false\" text=\"Login\" />\r\n               </children></AnchorPane>\r\n        </items>\r\n      </SplitPane>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/cat201librarysystem/landing-page.fxml b/src/main/resources/com/example/cat201librarysystem/landing-page.fxml
+--- a/src/main/resources/com/example/cat201librarysystem/landing-page.fxml	(revision 1f345c76189690e626448c811d91fbceda7096d0)
++++ b/src/main/resources/com/example/cat201librarysystem/landing-page.fxml	(date 1732669007478)
+@@ -41,7 +41,7 @@
+                         <Font name="System Italic" size="12.0" />
+                      </font>
+                   </PasswordField>
+-                  <Button fx:id="loginButton" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" text="Login" />
++                  <Button fx:id="loginButton" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
+                </children></AnchorPane>
+         </items>
+       </SplitPane>
+Index: src/main/resources/com/example/cat201librarysystem/CSV_file/book.csv
+===================================================================
+diff --git a/src/main/resources/com/example/cat201librarysystem/CSV_file/book.csv b/src/main/resources/com/example/cat201librarysystem/CSV_file/book.csv
+new file mode 100644
+--- /dev/null	(date 1732668649582)
++++ b/src/main/resources/com/example/cat201librarysystem/CSV_file/book.csv	(date 1732668649582)
+@@ -0,0 +1,6 @@
++The Great Gatsby,F. Scott Fitzgerald,9780743273565,John Doe
++To Kill a Mockingbird,Harper Lee,9780061120084,Jane Smith
++1984,George Orwell,9780451524935,Emily Johnson
++Moby-Dick,Herman Melville,9781503280786,-99
++Pride and Prejudice,Jane Austen,9781503290563,-99
++The Catcher in the Rye,J.D. Salinger,9780316769488,James White
+\ No newline at end of file

@@ -1,0 +1,27 @@
+Index: src/main/java/com/example/cat201librarysystem/LandingController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cat201librarysystem;\r\n\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.PasswordField;\r\nimport javafx.scene.control.TextField;\r\nimport java.net.URL;\r\n\r\nimport java.util.ResourceBundle;\r\n\r\npublic class LandingController implements Initializable{\r\n    @FXML private TextField idField;\r\n    @FXML private PasswordField passwordField;\r\n    @FXML private Button loginButton;\r\n\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) throws NullPointerException {\r\n        System.out.print(\"hell\");\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/cat201librarysystem/LandingController.java b/src/main/java/com/example/cat201librarysystem/LandingController.java
+--- a/src/main/java/com/example/cat201librarysystem/LandingController.java	(revision 1f345c76189690e626448c811d91fbceda7096d0)
++++ b/src/main/java/com/example/cat201librarysystem/LandingController.java	(date 1732682102318)
+@@ -1,5 +1,6 @@
+ package com.example.cat201librarysystem;
+ 
++import javafx.event.ActionEvent;
+ import javafx.fxml.FXML;
+ import javafx.fxml.Initializable;
+ import javafx.scene.control.Button;
+@@ -19,4 +20,8 @@
+         System.out.print("hell");
+     }
+ 
++    public void handleLogin(ActionEvent e) {
++        System.out.print("jasf");
++    }
++
+ }
+\ No newline at end of file
