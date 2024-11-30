@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(fonts/Poppins-Bold.ttf);
+}
+
+.button {
+    -fx-background-color: #1A374D; /* Dark blue background */
+    -fx-padding: 8 16;             /* Padding for a compact button */
+    -fx-background-radius: 8px;   /* Rounded corners */
+    -fx-border-radius: 12px;      /* Rounded border */
+    -fx-border-color: #6998AB;    /* Light blue border */
+    -fx-border-width: 3px;        /* Thin border */
+    -fx-cursor: hand;             /* Hand cursor on hover */
+    -fx-font-family: Poppins;
+    -fx-font-weight: 700;
+    -fx-opacity: 1;
+    -fx-text-fill: #B1D0E0;       /* White text for contrast */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.25), 5, 0, 3, 3); /* Subtle shadow */
+    -fx-transition: all 0.3s ease; /* Smooth transition for hover and press effects */
+}
+
+.button:hover {
+    -fx-background-color: #406882; /* Slightly lighter blue background on hover */
+    -fx-border-color: #B1D0E0;     /* Lighter blue border on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 4, 4); /* Slightly stronger shadow on hover */
+}
+
+.button:pressed {
+    -fx-background-color: #6998AB; /* Lighter blue when pressed */
+    -fx-border-color: #B1D0E0;     /* Light blue border when pressed */
+    -fx-translate-y: 4px;          /* Slightly moves down when pressed */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 8, 0, 6, 6); /* Stronger shadow when pressed */
+}
+
+.label {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-font-family: Parkinsans-Bold;
+    -fx-alignment: center;
+    -fx-text-fill: #1A374D;
+}
+
+#smallLabel {
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-font-family: Parkinsans-Bold;
+    -fx-alignment: center;
+    -fx-text-fill: #1A374D;
+}
+
+
+.vbox {
+    -fx-spacing: 20; /* Set the vertical spacing between the labels */
+    -fx-alignment: center; /* Align items at the center */
+}

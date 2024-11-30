@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class ViewBookPageController implements Initializable {
     @FXML
-    private Label titleLabel, authorLabel, ISBNLabel, availabilityLabel, borrowerNameLabel;
+    private Label titleLabel, authorLabel, ISBNLabel, borrowerNameLabel;
     @FXML
     private Button backButton, returnButton, borrowButton;
     private Book book;
@@ -36,7 +36,6 @@ public class ViewBookPageController implements Initializable {
         titleLabel.setText(book.getTitle());
         authorLabel.setText(book.getAuthor());
         ISBNLabel.setText(book.getIsbn());
-        availabilityLabel.setText(book.isAvailable() ? "Available" : "Not Available");
         borrowerNameLabel.setText(book.getBorrowerName());
     }
 
