@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="717.0" stylesheets="@addbook-page.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.AddBookPageController">
+   <children>
+      <ImageView fitHeight="475.0" fitWidth="875.0" layoutX="-93.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/background.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="addBookTitle" layoutX="147.0" layoutY="125.0" prefHeight="39.0" prefWidth="422.0" promptText="Title " />
+      <TextField fx:id="addBookISBN" layoutX="148.0" layoutY="180.0" prefHeight="26.0" prefWidth="422.0" promptText="ISBN" />
+      <TextField fx:id="addBookAuthor" alignment="TOP_LEFT" layoutX="146.0" layoutY="235.0" prefHeight="39.0" prefWidth="422.0" promptText="Author" />
+      <Button fx:id="submitAddBook" layoutX="314.0" layoutY="279.0" mnemonicParsing="false" onAction="#onSubmitAddBook" text="Add Book" />
+      <Label fx:id="addBookPageTitle" layoutX="248.0" layoutY="32.0" prefHeight="74.0" prefWidth="220.0" text="ADD BOOK" wrapText="true">
+         <textFill>
+            <LinearGradient>
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.6000000238418579" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#onClickBack" opacity="0.8" text="BACK">
+         <font>
+            <Font name="Algerian" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

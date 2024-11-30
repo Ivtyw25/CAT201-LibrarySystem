@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="717.0" style="-fx-background-color: cyan;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.LandingPageController">
+   <children>
+      <SplitPane dividerPositions="0.648867766284596" prefHeight="373.0" prefWidth="566.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="624.0" fitWidth="486.0" layoutX="-12.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-9.0" AnchorPane.leftAnchor="-12.0" AnchorPane.rightAnchor="-12.399999999999977" AnchorPane.topAnchor="-9.0">
+                     <image>
+                        <Image url="@img/landingPage.jpg" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="236.0" style="-fx-background-color: #B1D0E0;">
+               <children>
+                  <Label layoutX="2.0" layoutY="31.0" prefHeight="143.0" prefWidth="241.0" text="Welcome To Library Management System" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="175.0" text="Username" />
+                  <TextField fx:id="usernameField" layoutX="35.0" layoutY="200.0" prefHeight="26.0" prefWidth="158.0" promptText="(e.g: ivtyw)">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="35.0" layoutY="243.0" text="Password" />
+                  <PasswordField fx:id="passwordField" layoutX="36.0" layoutY="268.0" prefHeight="26.0" prefWidth="158.0" promptText="(e.g: admin123)">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="loginButton" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
+                  <Label fx:id="incorrectErrorMessage" layoutX="30.0" layoutY="370.0" text="Incorrect username or password" textFill="RED">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emptyErrorMessage" layoutX="9.0" layoutY="370.0" text="username or password cannot be empty" textFill="RED">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

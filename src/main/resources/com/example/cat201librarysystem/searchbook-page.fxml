@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="469.0" prefWidth="717.0" style="-fx-background-color: B1D0E0;" stylesheets="@searchbook-page.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.SearchBookPageController">
+    <children>
+      <ImageView fitHeight="469.0" fitWidth="727.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@img/background.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="9.0" layoutY="3.0" prefHeight="462.0" prefWidth="717.0">
+         <children>
+              <TextField fx:id="searchField" layoutX="149.0" layoutY="129.0" prefHeight="44.0" prefWidth="411.0" promptText="Enter title, author or ISBN">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></TextField>
+              <!-- TableView for Books -->
+              <TableView fx:id="bookTableView" layoutX="-9.0" layoutY="187.0" prefHeight="275.0" prefWidth="727.0">
+                  <!-- Column for Title -->
+                  <columns>
+                      <TableColumn fx:id="titleColumn" prefWidth="197.60000610351562" text="Title">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="title" />
+                          </cellValueFactory>
+                      </TableColumn>
+      
+                                  <!-- Column for Author -->
+                      <TableColumn fx:id="authorColumn" minWidth="0.0" prefWidth="172.79998779296875" text="Author">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="author" />
+                          </cellValueFactory>
+                      </TableColumn>
+      
+                                  <!-- Column for ISBN -->
+                      <TableColumn fx:id="ISBNColumn" maxWidth="267.20001220703125" prefWidth="174.4000244140625" text="ISBN">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="isbn" />
+                          </cellValueFactory>
+                      </TableColumn>
+                  <TableColumn fx:id="borrowerNameColumn" minWidth="0.0" prefWidth="176.79998779296875" text="Borrower Name">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="author" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  </columns>
+              </TableView>
+            <Label fx:id="searchBookTitle" layoutX="205.0" layoutY="55.0" prefHeight="74.0" prefWidth="300.0" text="SEARCH BOOK" wrapText="true">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+            <Button fx:id="backButton" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#onClickBack" opacity="0.8" prefHeight="40.0" prefWidth="74.0" text="BACK">
+               <font>
+                  <Font name="Algerian" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
