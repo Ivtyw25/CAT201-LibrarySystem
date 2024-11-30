@@ -28,25 +28,30 @@
               <TableView fx:id="bookTableView" layoutX="-9.0" layoutY="187.0" prefHeight="275.0" prefWidth="727.0">
                   <!-- Column for Title -->
                   <columns>
-                      <TableColumn fx:id="titleColumn" prefWidth="244.79995441436768" text="Title">
+                      <TableColumn fx:id="titleColumn" prefWidth="197.60000610351562" text="Title">
                           <cellValueFactory>
                               <PropertyValueFactory property="title" />
                           </cellValueFactory>
                       </TableColumn>
       
                                   <!-- Column for Author -->
-                      <TableColumn fx:id="authorColumn" minWidth="0.0" prefWidth="218.40003967285156" text="Author">
+                      <TableColumn fx:id="authorColumn" minWidth="0.0" prefWidth="172.79998779296875" text="Author">
                           <cellValueFactory>
                               <PropertyValueFactory property="author" />
                           </cellValueFactory>
                       </TableColumn>
       
                                   <!-- Column for ISBN -->
-                      <TableColumn fx:id="ISBNColumn" prefWidth="260.00006103515625" text="ISBN">
+                      <TableColumn fx:id="ISBNColumn" maxWidth="267.20001220703125" prefWidth="174.4000244140625" text="ISBN">
                           <cellValueFactory>
                               <PropertyValueFactory property="isbn" />
                           </cellValueFactory>
                       </TableColumn>
+                  <TableColumn fx:id="borrowerNameColumn" minWidth="0.0" prefWidth="176.79998779296875" text="Borrower Name">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="author" />
+                     </cellValueFactory>
+                  </TableColumn>
                   </columns>
               </TableView>
             <Label fx:id="searchBookTitle" layoutX="205.0" layoutY="55.0" prefHeight="74.0" prefWidth="300.0" text="SEARCH BOOK" wrapText="true">

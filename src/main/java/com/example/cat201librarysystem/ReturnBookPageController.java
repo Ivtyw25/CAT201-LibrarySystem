@@ -34,6 +34,14 @@ public class ReturnBookPageController implements Initializable {
     public void onSubmitReturnBook(ActionEvent e) {
         String tempISBN = returnBookISBNField.getText();
 
+        if (tempISBN.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please fill in all fields");
+            alert.showAndWait();
+            return;
+        }
+
         HashMap<String, Book> tempLib = library.getLibrary();
         Book bookToReturn = null;
 

@@ -28,6 +28,8 @@ public class SearchBookPageController implements Initializable{
     @FXML
     private TableColumn<Book, String> ISBNColumn;
     @FXML
+    private TableColumn<Book, String> borrowerNameColumn;
+    @FXML
     private TextField searchField;
     private Library library;
 
@@ -65,6 +67,7 @@ public class SearchBookPageController implements Initializable{
         titleColumn.setCellValueFactory(cellData -> cellData.getValue().getTitleProperty());
         authorColumn.setCellValueFactory(cellData -> cellData.getValue().getAuthorProperty());
         ISBNColumn.setCellValueFactory(cellData -> cellData.getValue().getIsbnProperty());
+        borrowerNameColumn.setCellValueFactory(cellData -> cellData.getValue().getBorrowerNameProperty());
 
         bookTableView.setItems(library.getAllBooks());
         searchField.textProperty().addListener((observable, oldValue, newValue) -> performSearch(newValue));

@@ -35,6 +35,14 @@ public class BorrowBookPageController implements Initializable {
         String tempISBN = borrowBookISBN.getText();
         String tempBorrowerName = borrowBookBorrowerName.getText();
 
+        if (tempISBN.isEmpty() || tempBorrowerName.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please fill in all fields");
+            alert.showAndWait();
+            return;
+        }
+
         HashMap<String, Book> tempLib = library.getLibrary();
         Book bookToBorrow = null;
 

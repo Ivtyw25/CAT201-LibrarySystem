@@ -45,9 +45,7 @@ public class Book {
     public StringProperty getIsbnProperty() {
         return new SimpleStringProperty(isbn);
     }
-    public BooleanProperty getAvailabilityProperty() {
-        return new SimpleBooleanProperty(isAvailable);
-    }
+    public StringProperty getBorrowerNameProperty() { return new SimpleStringProperty(borrowerName); }
 
     public static Book fromCSV(String line) {
         String[] fields = line.split(",");

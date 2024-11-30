@@ -38,11 +38,24 @@ public class AddBookPageController implements Initializable {
         String tempISBN = addBookISBN.getText();
         String tempAuthor = addBookAuthor.getText();
 
+        if (tempTitle.isEmpty() || tempAuthor.isEmpty() || tempISBN.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Please fill in all fields");
+            alert.showAndWait();
+            return;
+        }
+
         if (library.addBook(tempTitle, tempAuthor, tempISBN)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Book already exists");
             alert.showAndWait();
+        } else {
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Success");
+            successAlert.setHeaderText("Book Added Successfully");
+            successAlert.showAndWait();
         }
         library.displayBooks();
     }

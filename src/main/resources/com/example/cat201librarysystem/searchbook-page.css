@@ -10,7 +10,8 @@
     -fx-border-radius: 12px;      /* Rounded border */
     -fx-border-color: #6998AB;    /* Light blue border */
     -fx-border-width: 3px;        /* Thin border */
-    -fx-cursor: hand;             /* Hand cursor on hover */
+    -fx-cursor: hand; /* Hand cursor on hover */
+    -fx-opacity: 1;
     -fx-font-family: Poppins;
     -fx-font-weight: 700;
     -fx-text-fill: #B1D0E0;       /* White text for contrast */

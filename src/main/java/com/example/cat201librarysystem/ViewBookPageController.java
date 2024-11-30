@@ -56,8 +56,9 @@ public class ViewBookPageController implements Initializable {
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Success");
             successAlert.setHeaderText("Book Returned Successfully");
-            library.displayBooks();
             successAlert.showAndWait();
+            changeToSearchPage();
+            library.displayBooks();
         }
     }
 
@@ -82,6 +83,7 @@ public class ViewBookPageController implements Initializable {
             successAlert.setHeaderText("Book Borrowed Successfully");
             successAlert.setContentText("You have successfully borrowed the book: " + book.getTitle());
             successAlert.showAndWait();
+            changeToSearchPage();
             library.displayBooks();
         }
     }
