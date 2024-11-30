@@ -1,5 +1,10 @@
 package com.example.cat201librarysystem;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Book {
     private final String title;
     private final String author;
@@ -20,19 +25,28 @@ public class Book {
     public String getTitle() {
         return title;
     }
-
     public String getAuthor() {
         return author;
     }
-
     public String getIsbn() {
         return isbn;
     }
-
     public boolean isAvailable() { return isAvailable; }
-
     public String getBorrowerName() {
         return borrowerName;
+    }
+
+    public StringProperty getTitleProperty() {
+        return new SimpleStringProperty(title);
+    }
+    public StringProperty getAuthorProperty() {
+        return new SimpleStringProperty(author);
+    }
+    public StringProperty getIsbnProperty() {
+        return new SimpleStringProperty(isbn);
+    }
+    public BooleanProperty getAvailabilityProperty() {
+        return new SimpleBooleanProperty(isAvailable);
     }
 
     public static Book fromCSV(String line) {

@@ -1,7 +1,11 @@
 package com.example.cat201librarysystem;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.*;
 import java.util.HashMap;
+import java.util.Locale;
 
 import static com.example.cat201librarysystem.FileManager.loadFromCSV;
 
@@ -29,39 +33,33 @@ public class Library {
             System.out.println("Book already exists");
             return true;
         } else {
-            Book book = new Book(title, author, isbn, "" );
+            Book book = new Book(title, author, isbn, null );
             library.put(isbn, book);
             System.out.println("Book added");
             return false;
         }
     }
 
-    public HashMap<String, Book> searchByTitle(String title) {
-        HashMap<String, Book> results = new HashMap<>();
-        for (String isbn : library.keySet()) {
-            Book book = library.get(isbn);
-            if (book.getTitle().equalsIgnoreCase(title)) {
-                results.put(isbn, book);
+    public ObservableList<Book> searchBooks(String searchTerm) {
+        ObservableList<Book> results = FXCollections.observableArrayList();
+
+        // Make the search term case-insensitive
+        String lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+        // Iterate over all books in the library
+        for (Book book : library.values()) {
+            // Search by title, author, or ISBN (case insensitive)
+            if (book.getTitle().toLowerCase().contains(lowerCaseSearchTerm) ||
+                    book.getAuthor().toLowerCase().contains(lowerCaseSearchTerm) ||
+                    book.getIsbn().toLowerCase().contains(lowerCaseSearchTerm)) {
+                results.add(book);
             }
         }
+
         return results;
     }
-
-    // Method to search for books by author (results in a HashMap)
-    public HashMap<String, Book> searchByAuthor(String author) {
-        HashMap<String, Book> results = new HashMap<>();
-        for (String isbn : library.keySet()) {
-            Book book = library.get(isbn);
-            if (book.getAuthor().equalsIgnoreCase(author)) {
-                results.put(isbn, book);
-            }
-        }
-        return results;
-    }
-
-    // Method to search for a book by ISBN (HashMap allows direct access by key)
-    public Book searchByIsbn(String isbn) {
-        return library.get(isbn); // No change needed, already optimized for HashMap
+    public ObservableList<Book> getAllBooks() {
+        return FXCollections.observableArrayList(library.values());
     }
 
     public void displayBooks (){
@@ -74,6 +72,7 @@ public class Library {
             book.displayDetails();
         }
     }
+
 
 
 

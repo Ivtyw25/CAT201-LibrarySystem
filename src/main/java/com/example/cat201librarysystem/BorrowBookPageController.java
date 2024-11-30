@@ -2,21 +2,23 @@ package com.example.cat201librarysystem;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
 public class BorrowBookPageController implements Initializable {
-    @FXML
-    private TextField borrowBookISBN, borrowBookBorrowerName;
-    @FXML
-    private Button submitBorrowBook;
+    @FXML private TextField borrowBookISBN, borrowBookBorrowerName;
+    @FXML private Button submitBorrowBook, backButton;
     private Library library;
 
     public BorrowBookPageController(Library library) {
@@ -67,5 +69,26 @@ public class BorrowBookPageController implements Initializable {
         }
     }
 
+    public void onClickBack(ActionEvent e) throws Exception {
+        changeToHomePage();
+    }
+
+    public void changeToHomePage() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home-page.fxml"));
+        fxmlLoader.setControllerFactory(c -> {
+            if (c == HomePageController.class) {
+                return new HomePageController(library);
+            }
+            try {
+                return c.getDeclaredConstructor().newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        });
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load(), 717, 469));
+        stage.show();
+    }
 
 }

@@ -20,6 +20,8 @@ public class HomePageController implements Initializable {
     private Button toBorrowBookPageButton;
     @FXML
     private Button toReturnBookPageButton;
+    @FXML
+    private Button toSearchBookPageButton;
 
     public HomePageController(Library library) {
         this.library = library;
@@ -28,14 +30,6 @@ public class HomePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) throws NullPointerException {
         System.out.println("Welcome to Home Page");
-    }
-
-    public void onClickAddBook (ActionEvent e) throws IOException {
-        changeToAddBookPage();
-    }
-
-    public void onClickBorrowBook (ActionEvent e) throws IOException {
-        changeToBorrowBookPage();
     }
 
     public void changeToAddBookPage () throws IOException {
@@ -88,6 +82,24 @@ public class HomePageController implements Initializable {
             }
         });
         Stage stage = (Stage) toReturnBookPageButton.getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load(), 717, 469));
+        stage.show();
+    }
+
+    public void changeToSearchBookPage () throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchbook-page.fxml"));
+        fxmlLoader.setControllerFactory(c -> {
+            if (c == SearchBookPageController.class) {
+                return new SearchBookPageController(library);
+            }
+            try {
+                return c.getDeclaredConstructor().newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        });
+        Stage stage = (Stage) toSearchBookPageButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 717, 469));
         stage.show();
     }

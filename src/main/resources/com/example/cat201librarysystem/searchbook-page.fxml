@@ -12,35 +12,30 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="469.0" prefWidth="717.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.BookPageController">
+<AnchorPane prefHeight="469.0" prefWidth="717.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.SearchBookPageController">
     <children>
       <AnchorPane layoutX="9.0" layoutY="3.0" prefHeight="462.0" prefWidth="717.0">
          <children>
-              <Button layoutX="528.0" layoutY="128.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="54.0" text="search">
-                  <font>
-                      <Font size="10.0" />
-                  </font>
-              </Button>
-              <TextField layoutX="141.0" layoutY="128.0" prefHeight="36.0" prefWidth="374.0" promptText="Enter title, author or ISBN" />
+              <TextField fx:id="searchField" layoutX="141.0" layoutY="128.0" prefHeight="36.0" prefWidth="426.0" promptText="Enter title, author or ISBN" />
               <!-- TableView for Books -->
               <TableView fx:id="bookTableView" layoutX="-9.0" layoutY="187.0" prefHeight="275.0" prefWidth="727.0">
                   <!-- Column for Title -->
                   <columns>
-                      <TableColumn fx:id="titleColumn" prefWidth="160.0" text="Title">
+                      <TableColumn fx:id="titleColumn" prefWidth="154.39996337890625" text="Title">
                           <cellValueFactory>
                               <PropertyValueFactory property="title" />
                           </cellValueFactory>
                       </TableColumn>
       
                                   <!-- Column for Author -->
-                      <TableColumn fx:id="authorColumn" prefWidth="160.0" text="Author">
+                      <TableColumn fx:id="authorColumn" prefWidth="132.0" text="Author">
                           <cellValueFactory>
                               <PropertyValueFactory property="author" />
                           </cellValueFactory>
                       </TableColumn>
       
                                   <!-- Column for ISBN -->
-                      <TableColumn fx:id="isbnColumn" prefWidth="160.0" text="ISBN">
+                      <TableColumn fx:id="ISBNColumn" prefWidth="160.7999267578125" text="ISBN">
                           <cellValueFactory>
                               <PropertyValueFactory property="isbn" />
                           </cellValueFactory>
@@ -68,7 +63,7 @@
                   <Font name="Arial Black" size="50.0" />
                </font>
             </Label>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.8" text="BACK">
+            <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickBack" opacity="0.8" text="BACK">
                <font>
                   <Font name="Algerian" size="12.0" />
                </font>

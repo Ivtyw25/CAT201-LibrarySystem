@@ -35,7 +35,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Button layoutX="603.0" layoutY="33.0" mnemonicParsing="false" style="-fx-background-color: BLACK;" text="Search" textFill="WHITE">
+            <Button fx:id="toSearchBookPageButton" layoutX="603.0" layoutY="33.0" mnemonicParsing="false" onAction="#changeToSearchBookPage" style="-fx-background-color: BLACK;" text="Search" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -44,7 +44,7 @@
       </AnchorPane>
       <AnchorPane layoutY="94.0" prefHeight="376.0" prefWidth="239.0" style="-fx-background-color: linear-gradient( to bottom,black,black,black,black,blue);">
          <children>
-            <Button fx:id="toAddBookPageButton" layoutX="60.0" layoutY="282.0" mnemonicParsing="false" onAction="#onClickAddBook" prefHeight="47.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Add Book" textFill="WHITE">
+            <Button fx:id="toAddBookPageButton" layoutX="60.0" layoutY="282.0" mnemonicParsing="false" onAction="#changeToAddBookPage" prefHeight="47.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="Add Book" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB Demi Bold" size="19.0" />
                </font>
@@ -58,7 +58,7 @@
       </AnchorPane>
       <AnchorPane layoutX="239.0" layoutY="94.0" prefHeight="376.0" prefWidth="239.0" style="-fx-background-color: linear-gradient( to bottom,black,black,black,black,blue);">
          <children>
-            <Button fx:id="toBorrowBookPageButton" layoutX="45.0" layoutY="280.0" mnemonicParsing="false" onAction="#onClickBorrowBook" prefHeight="47.0" prefWidth="149.0" style="-fx-background-color: transparent;" text="Borrow Book" textFill="WHITE">
+            <Button fx:id="toBorrowBookPageButton" layoutX="45.0" layoutY="280.0" mnemonicParsing="false" onAction="#changeToBorrowBookPage" prefHeight="47.0" prefWidth="149.0" style="-fx-background-color: transparent;" text="Borrow Book" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB Bold" size="19.0" />
                </font>
@@ -72,7 +72,7 @@
       </AnchorPane>
       <AnchorPane layoutX="478.0" layoutY="94.0" prefHeight="376.0" prefWidth="239.0" style="-fx-background-color: linear-gradient( to bottom,black,black,black,black,blue);">
          <children>
-            <Button fx:id="toReturnBookPageButton" layoutX="76.0" layoutY="285.0" mnemonicParsing="false" onAction="#changeToReturnBookPage" style="-fx-background-color: transparent;" text="Return Book" textFill="WHITE">
+            <Button fx:id="toReturnBookPageButton" layoutX="60.0" layoutY="284.0" mnemonicParsing="false" onAction="#changeToReturnBookPage" style="-fx-background-color: transparent;" text="Return Book" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB Bold" size="19.0" />
                </font></Button>
