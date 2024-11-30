@@ -8,12 +8,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ViewBookPageController implements Initializable {
     @FXML
@@ -55,12 +56,34 @@ public class ViewBookPageController implements Initializable {
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Success");
             successAlert.setHeaderText("Book Returned Successfully");
+            library.displayBooks();
             successAlert.showAndWait();
         }
     }
 
     public void onClickBorrow(ActionEvent e) throws Exception {
+        AtomicReference<String> borrowerName = new AtomicReference<>();
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Borrower Information");
+        dialog.setHeaderText("Please enter the borrower's name:");
+        dialog.setContentText("Borrower's Name:");
 
+        dialog.showAndWait().ifPresent(borrowerName::set);
+
+        if(!book.borrowBook(borrowerName.get())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Book is already borrowed by someone else");
+            alert.showAndWait();
+        } else {
+            System.out.println("Book borrowed successfully");
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Success");
+            successAlert.setHeaderText("Book Borrowed Successfully");
+            successAlert.setContentText("You have successfully borrowed the book: " + book.getTitle());
+            successAlert.showAndWait();
+            library.displayBooks();
+        }
     }
 
     public void changeToSearchPage() throws IOException {
