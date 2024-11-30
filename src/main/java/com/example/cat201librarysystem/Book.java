@@ -64,6 +64,9 @@ public class Book {
     }
 
     public boolean borrowBook(String borrowerName) {
+        if (borrowerName == null || borrowerName.isEmpty()) {
+            return false;
+        }
         if (isAvailable) {
             this.isAvailable = false;
             this.borrowerName = borrowerName;

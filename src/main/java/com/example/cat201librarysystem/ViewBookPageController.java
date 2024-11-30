@@ -73,7 +73,7 @@ public class ViewBookPageController implements Initializable {
         if(!book.borrowBook(borrowerName.get())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Book is already borrowed by someone else");
+            alert.setHeaderText("Book is already borrowed by someone else or borrower name is empty");
             alert.showAndWait();
         } else {
             System.out.println("Book borrowed successfully");
