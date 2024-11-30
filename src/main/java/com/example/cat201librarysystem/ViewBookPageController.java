@@ -81,7 +81,7 @@ public class ViewBookPageController implements Initializable {
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Success");
             successAlert.setHeaderText("Book Borrowed Successfully");
-            successAlert.setContentText("You have successfully borrowed the book: " + book.getTitle());
+            successAlert.setContentText("book: " + book.getTitle() + " has successfully been borrowed by " + borrowerName.get());
             successAlert.showAndWait();
             changeToSearchPage();
             library.displayBooks();
