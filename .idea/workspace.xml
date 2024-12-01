@@ -6,28 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5db5bb90-daad-485a-b7fb-314707ff062f" name="Changes" comment="Initialize Project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cat201librarysystem/CSV_file/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cat201librarysystem/CSV_file/books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/AddBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/AddBookPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/BorrowBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/BorrowBookPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/CSV_file/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/CSV_file/books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/FileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/HomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/HomePageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/LandingPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/LandingPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/Library.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/LibrarySystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/LibrarySystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/ReturnBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/ReturnBookPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/SearchBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/SearchBookPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/ViewBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/ViewBookPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/addbook-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/addbook-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/addbook-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/addbook-page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/borrowbook-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/borrowbook-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/borrowbook-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/borrowbook-page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/home-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/home-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/home-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/home-page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/returnbook-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/returnbook-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/searchbook-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/searchbook-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/viewbook-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/viewbook-page.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +66,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Ivantham/Downloads/CAT201-LibrarySystem-final",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -131,6 +110,7 @@
       <workItem from="1732700502425" duration="20360000" />
       <workItem from="1732905237257" duration="1322000" />
       <workItem from="1732906577976" duration="37179000" />
+      <workItem from="1733031302660" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Project">
       <option name="closed" value="true" />
