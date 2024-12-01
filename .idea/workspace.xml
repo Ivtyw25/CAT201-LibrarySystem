@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5db5bb90-daad-485a-b7fb-314707ff062f" name="Changes" comment="Initialize Project" />
+    <list default="true" id="5db5bb90-daad-485a-b7fb-314707ff062f" name="Changes" comment="Initialize Project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cat201librarysystem/CSV_file/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cat201librarysystem/CSV_file/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/AddBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/AddBookPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/BorrowBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/BorrowBookPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/CSV_file/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/CSV_file/books.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/FileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/HomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/HomePageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/LandingPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/LandingPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/Library.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/LibrarySystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/LibrarySystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/ReturnBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/ReturnBookPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/SearchBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/SearchBookPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/ViewBookPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/ViewBookPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/addbook-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/addbook-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/addbook-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/addbook-page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/borrowbook-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/borrowbook-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/borrowbook-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/borrowbook-page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/home-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/home-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/home-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/home-page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/returnbook-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/returnbook-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/searchbook-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/searchbook-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/viewbook-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/cat201librarysystem/viewbook-page.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +86,7 @@
     "Application.LibrarySystem.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -124,5 +149,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialize Project" />
     <option name="LAST_COMMIT_MESSAGE" value="Initialize Project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/cat201librarysystem/LibrarySystem.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
