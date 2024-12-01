@@ -11,11 +11,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="717.0" style="-fx-background-color: #B1D0E0;" stylesheets="@viewbook-page.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cat201librarysystem.ViewBookPageController">
    <children>
-      <HBox layoutX="73.0" layoutY="378.0" prefHeight="48.0" prefWidth="571.0" spacing="40.0">
+      <HBox layoutX="147.0" layoutY="379.0" prefHeight="48.0" prefWidth="422.0" spacing="40.0">
          <children>
             <Button fx:id="borrowButton" mnemonicParsing="false" onAction="#onClickBorrow" text="borrow book" />
             <Button fx:id="returnButton" mnemonicParsing="false" onAction="#onClickReturn" text="return book" />
-            <Button fx:id="editBook" mnemonicParsing="false" onAction="#onClickEdit" text="edit book" />
             <Button fx:id="deleteBook" mnemonicParsing="false" onAction="#onClickDelete" text="delete book" />
          </children>
       </HBox>

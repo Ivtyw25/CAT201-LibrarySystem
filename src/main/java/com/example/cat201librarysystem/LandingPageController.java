@@ -19,11 +19,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LandingPageController implements Initializable{
-    @FXML private TextField usernameField;
-    @FXML private PasswordField passwordField;
-    @FXML private Button loginButton;
-    @FXML private Label incorrectErrorMessage;
-    @FXML private Label emptyErrorMessage;
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private PasswordField passwordField;
+    @FXML
+    private Button loginButton;
+    @FXML
+    private Label incorrectErrorMessage, emptyErrorMessage;
     private Library library;
     private static final String adminFilePath = "src/main/resources/com/example/cat201librarysystem/CSV_file/admin.csv";
 

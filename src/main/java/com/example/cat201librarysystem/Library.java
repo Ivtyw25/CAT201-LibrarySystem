@@ -30,7 +30,7 @@ public class Library {
     }
 
     public boolean addBook(String title, String author, String isbn) {
-        if (library.containsKey(isbn)) {
+        if (checkBook(isbn)) {
             System.out.println("Book already exists");
             return true;
         } else {
@@ -39,6 +39,10 @@ public class Library {
             System.out.println("Book added");
             return false;
         }
+    }
+
+    public boolean checkBook(String isbn) {
+        return library.containsKey(isbn);
     }
 
     public ObservableList<Book> searchBooks(String searchTerm) {
@@ -67,12 +71,14 @@ public class Library {
     }
 
 
-    public void removeBook(Book book) {
+    public boolean removeBook(Book book) {
         if (book != null && library.containsKey(book.getIsbn())) {
             library.remove(book.getIsbn());
             System.out.println("Book removed: " + book.getTitle());
+            return true;
         } else {
             System.out.println("Book not found in library.");
+            return false;
         }
     }
 
