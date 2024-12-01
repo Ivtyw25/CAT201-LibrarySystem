@@ -9,7 +9,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
@@ -27,6 +26,8 @@ public class BorrowBookPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        borrowBookISBN.setFocusTraversable(false);
+        borrowBookBorrowerName.setFocusTraversable(false);
         System.out.println("Welcome to Borrow Book Page");
         library.displayBooks();
     }
@@ -71,7 +72,7 @@ public class BorrowBookPageController implements Initializable {
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Success");
             successAlert.setHeaderText("Book Borrowed Successfully");
-            successAlert.setContentText("book: " + bookToBorrow.getTitle() + " has successfully been borrowed by " + tempBorrowerName);
+            successAlert.setContentText("Book " + bookToBorrow.getTitle() + " has successfully been borrowed by " + tempBorrowerName);
             successAlert.showAndWait();
             library.displayBooks();
         }

@@ -17,9 +17,9 @@
       </ImageView>
       <AnchorPane layoutX="14.0" prefHeight="469.0" prefWidth="705.0">
          <children>
-            <TextField fx:id="borrowBookISBN" layoutX="142.0" layoutY="148.0" prefHeight="26.0" prefWidth="422.0" promptText="ISBN" />
-            <TextField fx:id="borrowBookBorrowerName" layoutX="142.0" layoutY="208.0" prefHeight="26.0" prefWidth="422.0" promptText="Borrower Name" />
-            <Button fx:id="submitBorrowBook" layoutX="312.0" layoutY="283.0" mnemonicParsing="false" onAction="#onSubmitBorrowBook" text="Borrow Book" />
+            <TextField fx:id="borrowBookISBN" layoutX="142.0" layoutY="148.0" prefHeight="26.0" prefWidth="422.0" promptText="ISBN" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="142.0" />
+            <TextField fx:id="borrowBookBorrowerName" layoutX="142.0" layoutY="208.0" prefHeight="26.0" prefWidth="422.0" promptText="Borrower Name" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="142.0" />
+            <Button fx:id="submitBorrowBook" layoutX="295.0" layoutY="281.0" mnemonicParsing="false" onAction="#onSubmitBorrowBook" text="Borrow Book" />
             <Label fx:id="borrowBookPageTitle" layoutX="198.0" layoutY="51.0" prefHeight="74.0" prefWidth="309.0" text="BORROW BOOK" wrapText="true">
                <font>
                   <Font name="Arial Black" size="50.0" />

@@ -33,6 +33,8 @@ public class LandingPageController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) throws NullPointerException {
+        usernameField.setFocusTraversable(false);
+        passwordField.setFocusTraversable(false);
         incorrectErrorMessage.setVisible(false);
         emptyErrorMessage.setVisible(false);
         System.out.println("Welcome to Landing Page");

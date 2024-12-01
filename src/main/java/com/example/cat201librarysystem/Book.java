@@ -6,9 +6,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Book {
-    private final String title;
-    private final String author;
-    private final String isbn;
+    private String title;
+    private String author;
+    private String isbn;
     private String borrowerName;
     private boolean isAvailable;
 
@@ -36,6 +36,10 @@ public class Book {
         return borrowerName;
     }
 
+    public void setTitle(String title) { this.title = title; }
+    public void setAuthor(String author) { this.author = author; }
+    public void setIsbn(String isbn) { this.isbn = isbn; }
+
     public StringProperty getTitleProperty() {
         return new SimpleStringProperty(title);
     }
@@ -58,15 +62,12 @@ public class Book {
         if (borrowerName.equals("-99")){
             borrowerName = null;
         }
-        // Create a new Book object and add it to the library
-        Book book = new Book(title, author, isbn, borrowerName);
-        return book;
+        return new Book(title, author, isbn, borrowerName);
     }
 
     public boolean borrowBook(String borrowerName) {
-        if (borrowerName == null || borrowerName.isEmpty()) {
+        if (borrowerName == null || borrowerName.isEmpty())
             return false;
-        }
         if (isAvailable) {
             this.isAvailable = false;
             this.borrowerName = borrowerName;

@@ -3,9 +3,13 @@ package com.example.cat201librarysystem;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
+
+import static com.example.cat201librarysystem.FileManager.writeToCSV;
 
 public class LibrarySystem extends Application {
     @Override
@@ -26,6 +30,10 @@ public class LibrarySystem extends Application {
 
         Scene scene = new Scene(fxmlLoader.load(), 717, 469);
         stage.setTitle("Library Management System");
+        stage.setOnCloseRequest(e -> {
+            writeToCSV(library);
+        });
+
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();

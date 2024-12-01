@@ -17,8 +17,10 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ReturnBookPageController implements Initializable {
-    @FXML private TextField returnBookISBNField;
-    @FXML private Button submitReturnBook, backButton;
+    @FXML
+    private TextField returnBookISBNField;
+    @FXML
+    private Button backButton;
     private Library library;
 
     public ReturnBookPageController(Library library) {
@@ -27,6 +29,7 @@ public class ReturnBookPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        returnBookISBNField.setFocusTraversable(false);
         System.out.println("Welcome to Return Book Page");
         library.displayBooks();
     }

@@ -2,11 +2,8 @@ package com.example.cat201librarysystem;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.io.*;
 import java.util.HashMap;
-import java.util.Locale;
-
 import static com.example.cat201librarysystem.FileManager.loadFromCSV;
 
 public class Library {
@@ -18,6 +15,12 @@ public class Library {
         library = new HashMap<>();
     }
 
+    public String getPath() { return path; }
+    public HashMap<String, Book> getLibrary() { return library; }
+    public ObservableList<Book> getAllBooks() {
+        return FXCollections.observableArrayList(library.values());
+    }
+
     public static Library getInstance() throws IOException {
         if (instance == null) {
             instance = new Library();
@@ -25,8 +28,6 @@ public class Library {
         }
         return instance;
     }
-
-    public HashMap<String, Book> getLibrary() { return library; }
 
     public boolean addBook(String title, String author, String isbn) {
         if (library.containsKey(isbn)) {
@@ -42,13 +43,8 @@ public class Library {
 
     public ObservableList<Book> searchBooks(String searchTerm) {
         ObservableList<Book> results = FXCollections.observableArrayList();
-
-        // Make the search term case-insensitive
         String lowerCaseSearchTerm = searchTerm.toLowerCase();
-
-        // Iterate over all books in the library
         for (Book book : library.values()) {
-            // Search by title, author, or ISBN (case insensitive)
             if (book.getTitle().toLowerCase().contains(lowerCaseSearchTerm) ||
                     book.getAuthor().toLowerCase().contains(lowerCaseSearchTerm) ||
                     book.getIsbn().toLowerCase().contains(lowerCaseSearchTerm)) {
@@ -57,9 +53,6 @@ public class Library {
         }
 
         return results;
-    }
-    public ObservableList<Book> getAllBooks() {
-        return FXCollections.observableArrayList(library.values());
     }
 
     public void displayBooks (){
@@ -74,6 +67,13 @@ public class Library {
     }
 
 
-
+    public void removeBook(Book book) {
+        if (book != null && library.containsKey(book.getIsbn())) {
+            library.remove(book.getIsbn());
+            System.out.println("Book removed: " + book.getTitle());
+        } else {
+            System.out.println("Book not found in library.");
+        }
+    }
 
 }

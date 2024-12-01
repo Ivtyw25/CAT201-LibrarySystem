@@ -1,14 +1,11 @@
 package com.example.cat201librarysystem;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 
 public class FileManager {
 
-    public static HashMap<String, Book> loadFromCSV(String filePath) throws IOException {
+    public static HashMap<String, Book> loadFromCSV(String filePath) {
         HashMap<String, Book> library = new HashMap<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -24,21 +21,39 @@ public class FileManager {
         return library;
     }
 
+    public static void writeToCSV(Library library) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(library.getPath()))) {
+            for (Book book : library.getLibrary().values()) {
+                String csvLine = String.format("%s,%s,%s,%s",
+                        book.getTitle(),
+                        book.getAuthor(),
+                        book.getIsbn(),
+                        book.getBorrowerName() == null || book.getBorrowerName().isEmpty() ? "-99" : book.getBorrowerName()
+                );
+                writer.write(csvLine);
+                writer.newLine();
+            }
+
+            System.out.println("Books successfully written to CSV.");
+        } catch (IOException e) {
+            System.err.println("Error writing to CSV: " + e.getMessage());
+        }
+    }
+
     public static boolean checkCredentials(String username, String password, String csvFilePath) {
         String line;
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             while ((line = br.readLine()) != null) {
                 String[] credentials = line.split(",");
 
-                // Check if the credentials match
                 if (credentials.length == 2 && credentials[0].equals(username) && credentials[1].equals(password)) {
-                    return true;  // Credentials are correct
+                    return true;
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return false;  // Credentials not found
+        return false;
     }
 
 }
