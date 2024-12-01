@@ -62,6 +62,7 @@ public class SearchBookPageController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        searchField.setFocusTraversable(false);
         System.out.println("Welcome to Search Book Page");
         library.displayBooks();
         titleColumn.setCellValueFactory(cellData -> cellData.getValue().getTitleProperty());

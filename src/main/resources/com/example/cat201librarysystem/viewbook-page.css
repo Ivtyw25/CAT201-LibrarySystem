@@ -11,9 +11,9 @@
     -fx-border-color: #6998AB;
     -fx-border-width: 3px;
     -fx-cursor: hand;
-    -fx-opacity: 1;
     -fx-font-family: Poppins;
     -fx-font-weight: 700;
+    -fx-opacity: 1;
     -fx-text-fill: #B1D0E0;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.25), 5, 0, 3, 3);
     -fx-transition: all 0.3s ease;
@@ -32,47 +32,29 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 8, 0, 6, 6);
 }
 
-#searchBookTitle {
-    -fx-font-size: 40px;
-    -fx-font-family: Poppins;
+.label {
+    -fx-font-size: 18px;
     -fx-font-weight: 700;
+    -fx-font-family: Poppins;
+    -fx-alignment: center;
     -fx-text-fill: #1A374D;
 }
 
-.text-field {
-    -fx-background-color: #F4F4F4;
-    -fx-border-color: #6998AB;
-    -fx-border-radius: 6px;
-    -fx-font-size: 14px;
-    -fx-text-fill: #333333;
-    -fx-padding: 10px;
+#smallLabel {
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-font-family: Poppins;
+    -fx-alignment: center;
+    -fx-text-fill: #1A374D;
 }
 
-.text-field:focused {
+.vbox {
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+#bookDetailsPane {
     -fx-border-color: #1A374D;
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 2, 2);
-}
-
-.table-view {
-    -fx-background-color: #B1D0E0;
-    -fx-padding: 10px;
-}
-
-.table-column-header {
-    -fx-background-color: #1A374D;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-}
-
-.table-cell {
-    -fx-background-color: #6998AB;
-    -fx-text-fill: #333333;
-    -fx-font-size: 12px;
-    -fx-cursor: hand;
-}
-
-.table-row-cell:hover {
-    -fx-background-color: black;
+    -fx-border-width: 3px;
+    -fx-border-radius: 10px;
 }

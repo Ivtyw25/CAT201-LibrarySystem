@@ -5,24 +5,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class ViewBookPageController implements Initializable {
     @FXML
-    private Label titleLabel, authorLabel, ISBNLabel, availabilityLabel, borrowerNameLabel;
+    private Label titleLabel, authorLabel, ISBNLabel, borrowerNameLabel;
     @FXML
     private Button backButton, returnButton, borrowButton;
     private Book book;
     private Library library;
+
     public ViewBookPageController(Book book, Library library) {
         this.book = book;
         this.library = library;
@@ -36,9 +35,42 @@ public class ViewBookPageController implements Initializable {
         titleLabel.setText(book.getTitle());
         authorLabel.setText(book.getAuthor());
         ISBNLabel.setText(book.getIsbn());
-        availabilityLabel.setText(book.isAvailable() ? "Available" : "Not Available");
         borrowerNameLabel.setText(book.getBorrowerName());
     }
+
+    public void errorMessageWindow(String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+    public void infoMessageWindow(String Title, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(Title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+    private Optional<String> showInputDialog(String currentValue, String title, String header, String content) {
+        TextInputDialog dialog = new TextInputDialog(currentValue);
+        dialog.setTitle(title);
+        dialog.setHeaderText(header);
+        dialog.setContentText(content);
+        return dialog.showAndWait();
+    }
+
+    private boolean isInputValid(String input, String errorMessage) {
+        // Check if the input is empty and show an error if so
+        if (input.isEmpty()) {
+            errorMessageWindow("Invalid Input", errorMessage);
+            return false;
+        }
+        return true;
+    }
+
 
     public void onClickBack(ActionEvent e) throws Exception {
         changeToSearchPage();
@@ -46,17 +78,10 @@ public class ViewBookPageController implements Initializable {
 
     public void onClickReturn(ActionEvent e) throws Exception {
         if (book.isAvailable()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Book Cannot Be Returned");
-            alert.setContentText("The book is already available and has not been borrowed.");
-            alert.showAndWait();
+            errorMessageWindow("Book Cannot Be Returned", "The book is already available and has not been borrowed.");
         } else {
             book.returnBook();
-            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-            successAlert.setTitle("Success");
-            successAlert.setHeaderText("Book Returned Successfully");
-            successAlert.showAndWait();
+            infoMessageWindow("Success", "Book Returned Successfully", "");
             changeToSearchPage();
             library.displayBooks();
         }
@@ -72,10 +97,7 @@ public class ViewBookPageController implements Initializable {
         dialog.showAndWait().ifPresent(borrowerName::set);
 
         if(!book.borrowBook(borrowerName.get())) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Book is already borrowed by someone else");
-            alert.showAndWait();
+            errorMessageWindow("Book is already borrowed by someone else or borrower name is empty", "");
         } else {
             System.out.println("Book borrowed successfully");
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -87,6 +109,18 @@ public class ViewBookPageController implements Initializable {
             library.displayBooks();
         }
     }
+
+    public void onClickDelete(ActionEvent e) throws Exception {
+        if (library.removeBook(book)) {
+            infoMessageWindow("Success", "Book Deleted Successfully", "The book has been removed from the library.");
+            library.displayBooks();
+            changeToSearchPage();
+        } else {
+            errorMessageWindow("Error", "The book delete unsuccessful.");
+        }
+
+    }
+
 
     public void changeToSearchPage() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchbook-page.fxml"));

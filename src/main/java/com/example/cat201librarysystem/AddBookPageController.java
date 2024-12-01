@@ -4,31 +4,32 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
 import java.io.IOException;
 import java.net.URL;
-
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
 import java.util.ResourceBundle;
 
 public class AddBookPageController implements Initializable {
 
-    @FXML private TextField addBookTitle, addBookISBN, addBookAuthor;
-    @FXML private Button submitAddBook;
-    @FXML private Button backButton;
-
+    @FXML
+    private TextField addBookTitle, addBookISBN, addBookAuthor;
+    @FXML
+    private Button backButton;
     private Library library;
+
     public AddBookPageController(Library library) {
         this.library = library;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        addBookTitle.setFocusTraversable(false);
+        addBookAuthor.setFocusTraversable(false);
+        addBookISBN.setFocusTraversable(false);
         System.out.println("Welcome to Add Book Page");
         library.displayBooks();
     }
@@ -73,7 +74,6 @@ public class AddBookPageController implements Initializable {
             try {
                 return c.getDeclaredConstructor().newInstance();
             } catch (Exception e) {
-                e.printStackTrace();
                 return null;
             }
         });
